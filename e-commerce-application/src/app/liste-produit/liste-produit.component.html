@@ -1,0 +1,21 @@
+<div class="container">
+    
+    <div class="row products">
+      <div *ngFor="let produit of produits" class="col-lg-4 col-md-6">
+        <div class="product" >
+          <div class="flip-container"> 
+            <div class="flipper">
+              <img [src]="produit.image" alt="" class="img-fluid" width="200px" height="200px"> 
+            </div>
+          </div>
+          <div class="text-center text">
+            <h3 ><a id="nomP" href="#">{{ produit.nom}}</a></h3>
+            <p class="price"> 
+              <del></del>{{ produit.prix }} $
+            </p>
+            <p class="buttons"><a (click)="goToProduit(produit)"  class="btn btn-outline-secondary">View detail</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

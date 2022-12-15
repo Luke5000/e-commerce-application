@@ -1,0 +1,29 @@
+<div class="container">
+    <div *ngIf="produitCurrent" class="order-1 order-lg-2">
+        <div id="productMain" class="row">
+          <div class="col-md-6">
+            <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+              <div class="item"> <img [src]="produitCurrent.image" alt="" class="img-fluid im"></div>
+            </div>
+            <!-- /.ribbon-->
+          </div>
+          <div class="col-md-6">
+            <div class="box">
+              <h1 class="text-center">{{ produitCurrent.nom }}</h1>
+              <p class="goToDescription">{{ produitCurrent.marque | uppercase }}</p>
+              <p class="price">{{produitCurrent.prix }} $ </p> <!--       {{produitCurrent.prix  |  currency:'$'}} mais dans ce cas le signe $ sera avant le numéro du prix  -->  
+	      <p>{{produitCurrent.dateCreation | date:"dd/mm/yyyy"}}</p>
+          <div>
+            <button (click)="goBack()" >Retour</button>
+          </div>
+
+            
+          </div>
+        </div>
+        <div id="details" class="box">
+          <p></p>
+          <h4>{{ produitCurrent.nom }}</h4>
+          <p>{{ produitCurrent.description }}</p>
+        </div>
+        
+</div>
